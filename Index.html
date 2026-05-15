@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debasish Sia | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#00f5ff,#ff00ea);
+    border-radius:20px;
+}
+
+/* Header */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.2);
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    background:linear-gradient(to right,#00f5ff,#ff00ea);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:15px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00f5ff;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 8%;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:#00f5ff;
+    filter:blur(150px);
+    opacity:0.2;
+    top:-100px;
+    left:-100px;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:#ff00ea;
+    filter:blur(150px);
+    opacity:0.2;
+    bottom:-100px;
+    right:-100px;
+}
+
+.hero-text{
+    max-width:600px;
+    z-index:1;
+}
+
+.hero-text h3{
+    color:#00f5ff;
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.hero-text h1{
+    font-size:48px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero-text h1 span{
+    background:linear-gradient(to right,#00f5ff,#ff00ea);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+    color:#d0d0d0;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:40px;
+    text-decoration:none;
+    margin-right:15px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.4s;
+}
+
+.primary{
+    background:linear-gradient(to right,#00f5ff,#ff00ea);
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px #00f5ff;
+}
+
+.secondary{
+    border:2px solid #00f5ff;
+    color:white;
+}
+
+.secondary:hover{
+    background:#00f5ff;
+    color:black;
+}
+
+/* Hero Card */
+
+.hero-card{
+    width:260px;
+    height:260px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(20px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:90px;
+    animation:float 4s ease-in-out infinite;
+    z-index:1;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Sections */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:50px;
+    background:linear-gradient(to right,#00f5ff,#ff00ea);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* Services */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.service-card{
+    background:rgba(255,255,255,0.04);
+    padding:30px;
+    border-radius:20px;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,245,255,0.2);
+}
+
+.service-card h2{
+    font-size:22px;
+    margin:18px 0;
+}
+
+.service-card p{
+    color:#d0d0d0;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* Contact */
+
+.contact-box{
+    background:rgba(255,255,255,0.04);
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.contact-box h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.contact-box p{
+    color:#d0d0d0;
+    margin:10px 0;
+    font-size:15px;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:black;
+    color:#00f5ff;
+    font-size:15px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-card{
+    margin-top:50px;
+    width:220px;
+    height:220px;
+    font-size:70px;
+}
+
+.hero-text h1{
+    font-size:36px;
+}
+
+.hero-text p{
+    font-size:14px;
+}
+
+.section-title{
+    font-size:28px;
+}
+
+nav{
+    display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+DEBASISH SIA
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h3>🚀 FULL STACK DEVELOPER</h3>
+
+<h1>
+Building <span>Modern Digital</span><br>
+Experiences
+</h1>
+
+<p>
+Hello, I'm Debasish Sia! I specialize in creating custom digital solutions
+that help businesses grow. I build modern websites, powerful applications,
+and reliable hosting systems with clean design and high performance.
+</p>
+
+<div class="buttons">
+
+<a href="#contact" class="btn primary">
+Hire Me
+</a>
+
+<a href="#services" class="btn secondary">
+My Services
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+💻
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h1 class="section-title">
+My Services
+</h1>
+
+<div class="services">
+
+<div class="service-card">
+
+<h2>📱 App Development</h2>
+
+<p>
+Custom mobile and web applications with modern UI,
+smooth performance, and scalable architecture.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h2>🌐 Website Building</h2>
+
+<p>
+Responsive and SEO-friendly websites designed
+for speed, security, and professional appearance.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h2>☁ Website Hosting</h2>
+
+<p>
+Secure hosting solutions with maintenance,
+technical support, and 24/7 uptime services.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h1 class="section-title">
+Let's Connect
+</h1>
+
+<div class="contact-box">
+
+<h2>
+Start Your Next Project
+</h2>
+
+<p>
+Ready to build something amazing together?
+Contact me today.
+</p>
+
+<p>📧 debasishsia@gmail.com</p>
+
+<p>📞 7894165007</p>
+
+<br>
+
+<a href="mailto:debasishsia@gmail.com" class="btn primary">
+Contact Now
+</a>
+
+</div>
+
+</section>
+
+<footer>
+✨ Created by DEBASISH SIA@
+</footer>
+
+</body>
+</html>
